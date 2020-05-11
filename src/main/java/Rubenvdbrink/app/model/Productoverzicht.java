@@ -26,4 +26,12 @@ public class Productoverzicht {
     public void setAlleproducten(ArrayList<Product> alleproducten) {
         this.alleproducten = alleproducten;
     }
+
+    @Override
+    public String toString() {
+        return "Productoverzicht{" +
+                "productOverzichtId=" + productOverzichtId +
+                ", alleproducten=" + alleproducten +
+                '}';
+    }
 }

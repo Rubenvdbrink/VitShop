@@ -56,4 +56,15 @@ public class Product {
     public void setPrijs(double prijs) {
         this.prijs = prijs;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", titel='" + titel + '\'' +
+                ", merk='" + merk + '\'' +
+                ", beschrijving='" + beschrijving + '\'' +
+                ", prijs=" + prijs +
+                '}';
+    }
 }

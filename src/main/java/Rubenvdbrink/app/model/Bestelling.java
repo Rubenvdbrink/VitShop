@@ -8,10 +8,28 @@ public class Bestelling {
     private double totaalPrijs;
     private ArrayList<Product> alleProducten = new ArrayList<Product>();
 
-    public Bestelling(double totaalPrijs, ArrayList<Product> alleProducten) {
+    public Bestelling(ArrayList<Product> alleProducten) {
         this.bestelNummer = UUID.randomUUID();
-        this.totaalPrijs = totaalPrijs;
+        this.totaalPrijs = berekenTotaalPrijs(alleProducten);
         this.alleProducten = alleProducten;
+    }
+
+    public Bestelling() {
+        this.bestelNummer = UUID.randomUUID();
+        this.totaalPrijs = berekenTotaalPrijs(alleProducten);
+    }
+
+    public double berekenTotaalPrijs(ArrayList<Product> alleProducten) {
+        double totaal = 0.0;
+        for (Product product : alleProducten) {
+            totaal += product.getPrijs();
+        }
+        return totaal;
+    }
+
+    public void voegProductToe(Product product) {
+        alleProducten.add(product);
+        this.totaalPrijs += product.getPrijs();
     }
 
     public UUID getBestelNummer() {
@@ -34,7 +52,12 @@ public class Bestelling {
         return alleProducten;
     }
 
-    public void setAlleProducten(ArrayList<Product> alleProducten) {
-        this.alleProducten = alleProducten;
+    @Override
+    public String toString() {
+        return "Bestelling{" +
+                "bestelNummer=" + bestelNummer +
+                ", totaalPrijs=" + totaalPrijs +
+                ", alleProducten=" + alleProducten +
+                '}';
     }
 }

@@ -37,4 +37,13 @@ public class Besteloverzicht {
     public void setAlleBestellingen(ArrayList<Bestelling> alleBestellingen) {
         this.alleBestellingen = alleBestellingen;
     }
+
+    @Override
+    public String toString() {
+        return "Besteloverzicht{" +
+                "bestelOverzichtId=" + bestelOverzichtId +
+                ", klant=" + klant +
+                ", alleBestellingen=" + alleBestellingen +
+                '}';
+    }
 }

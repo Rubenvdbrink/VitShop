@@ -45,4 +45,8 @@ public class Klant extends Gebruiker {
     public void setBesteloverzicht(Besteloverzicht besteloverzicht) {
         this.besteloverzicht = besteloverzicht;
     }
+
+    public String toString() {
+        return super.toString();
+    }
 }

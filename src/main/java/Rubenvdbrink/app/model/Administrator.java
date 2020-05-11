@@ -17,4 +17,8 @@ public class Administrator extends Gebruiker {
     public void setAdminId(UUID adminId) {
         this.adminId = adminId;
     }
+
+    public String toString() {
+        return super.toString();
+    }
 }

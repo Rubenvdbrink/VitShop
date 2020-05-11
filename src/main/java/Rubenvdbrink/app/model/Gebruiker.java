@@ -24,4 +24,12 @@ public class Gebruiker {
     public void setWachtwoord(String wachtwoord) {
         this.wachtwoord = wachtwoord;
     }
+
+    @Override
+    public String toString() {
+        return "Gebruiker{" +
+                "gebruikersnaam='" + gebruikersnaam + '\'' +
+                ", wachtwoord='" + wachtwoord + '\'' +
+                '}';
+    }
 }

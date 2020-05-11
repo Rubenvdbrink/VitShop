@@ -47,4 +47,14 @@ public class Winkelwagen {
     public void setKlant(Klant klant) {
         this.klant = klant;
     }
+
+    @Override
+    public String toString() {
+        return "Winkelwagen{" +
+                "wagenId=" + wagenId +
+                ", totaalPrijs=" + totaalPrijs +
+                ", alleProducten=" + alleProducten +
+                ", klant=" + klant +
+                '}';
+    }
 }
