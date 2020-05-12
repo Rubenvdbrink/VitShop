@@ -7,6 +7,7 @@ public class Bestelling {
     private UUID bestelNummer;
     private double totaalPrijs;
     private ArrayList<Product> alleProducten = new ArrayList<Product>();
+    private Besteloverzicht besteloverzicht;
 
     public Bestelling(ArrayList<Product> alleProducten) {
         this.bestelNummer = UUID.randomUUID();
@@ -30,6 +31,14 @@ public class Bestelling {
     public void voegProductToe(Product product) {
         alleProducten.add(product);
         this.totaalPrijs += product.getPrijs();
+    }
+
+    public Besteloverzicht getBesteloverzicht() {
+        return besteloverzicht;
+    }
+
+    public void setBesteloverzicht(Besteloverzicht besteloverzicht) {
+        this.besteloverzicht = besteloverzicht;
     }
 
     public UUID getBestelNummer() {
