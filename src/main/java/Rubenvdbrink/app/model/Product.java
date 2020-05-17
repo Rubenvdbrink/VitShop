@@ -3,11 +3,11 @@ package Rubenvdbrink.app.model;
 import java.util.UUID;
 
 public class Product {
-    private UUID productId;
-    private String titel;
-    private String merk;
-    private String beschrijving;
-    private double prijs;
+    public UUID productId;
+    public String titel;
+    public String merk;
+    public String beschrijving;
+    public double prijs;
 
     public Product(String titel, String merk, String beschrijving, double prijs) {
         this.productId = UUID.randomUUID();

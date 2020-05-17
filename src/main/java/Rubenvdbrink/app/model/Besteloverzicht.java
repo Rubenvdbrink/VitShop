@@ -5,13 +5,11 @@ import java.util.UUID;
 
 public class Besteloverzicht {
     private UUID bestelOverzichtId;
-    private Klant klant;
     private ArrayList<Bestelling> alleBestellingen = new ArrayList<Bestelling>();
 
-    public Besteloverzicht(Klant klant, ArrayList<Bestelling> alleBestellingen) {
+    public Besteloverzicht(Klant klant) {
         this.bestelOverzichtId = UUID.randomUUID();
-        this.klant = klant;
-        this.alleBestellingen = alleBestellingen;
+        this.alleBestellingen = new ArrayList<>();
     }
 
     public UUID getBestelOverzichtId() {
@@ -20,14 +18,6 @@ public class Besteloverzicht {
 
     public void setBestelOverzichtId(UUID bestelOverzichtId) {
         this.bestelOverzichtId = bestelOverzichtId;
-    }
-
-    public Klant getKlant() {
-        return klant;
-    }
-
-    public void setKlant(Klant klant) {
-        this.klant = klant;
     }
 
     public ArrayList<Bestelling> getAlleBestellingen() {
@@ -42,7 +32,6 @@ public class Besteloverzicht {
     public String toString() {
         return "Besteloverzicht{" +
                 "bestelOverzichtId=" + bestelOverzichtId +
-                ", klant=" + klant +
                 ", alleBestellingen=" + alleBestellingen +
                 '}';
     }

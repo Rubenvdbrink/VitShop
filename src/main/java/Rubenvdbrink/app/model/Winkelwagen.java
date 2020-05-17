@@ -6,14 +6,17 @@ import java.util.UUID;
 public class Winkelwagen {
     private UUID wagenId;
     private double totaalPrijs;
-    private ArrayList<Product> alleProducten = new ArrayList<Product>();
-    private Klant klant;
+    private ArrayList<Product> alleProducten;
 
-    public Winkelwagen(double totaalPrijs, ArrayList<Product> alleProducten, Klant klant) {
+    public Winkelwagen() {
         this.wagenId = UUID.randomUUID();
-        this.totaalPrijs = totaalPrijs;
-        this.alleProducten = alleProducten;
-        this.klant = klant;
+        this.totaalPrijs = 0.0;
+        this.alleProducten = new ArrayList<>();
+    }
+
+    public void voegProductToe(Product product) {
+        this.alleProducten.add(product);
+        this.totaalPrijs += product.getPrijs();
     }
 
     public UUID getWagenId() {
@@ -28,8 +31,8 @@ public class Winkelwagen {
         return totaalPrijs;
     }
 
-    public void setTotaalPrijs(double totaalPrijs) {
-        this.totaalPrijs = totaalPrijs;
+    public void setTotaalPrijs(ArrayList<Product> alleProducten) {
+        this.totaalPrijs = Tools.berekenTotaalPrijs(alleProducten);
     }
 
     public ArrayList<Product> getAlleProducten() {
@@ -40,21 +43,12 @@ public class Winkelwagen {
         this.alleProducten = alleProducten;
     }
 
-    public Klant getKlant() {
-        return klant;
-    }
-
-    public void setKlant(Klant klant) {
-        this.klant = klant;
-    }
-
     @Override
     public String toString() {
         return "Winkelwagen{" +
                 "wagenId=" + wagenId +
                 ", totaalPrijs=" + totaalPrijs +
                 ", alleProducten=" + alleProducten +
-                ", klant=" + klant +
                 '}';
     }
 }

@@ -9,23 +9,10 @@ public class Bestelling {
     private ArrayList<Product> alleProducten = new ArrayList<Product>();
     private Besteloverzicht besteloverzicht;
 
-    public Bestelling(ArrayList<Product> alleProducten) {
-        this.bestelNummer = UUID.randomUUID();
-        this.totaalPrijs = berekenTotaalPrijs(alleProducten);
-        this.alleProducten = alleProducten;
-    }
-
     public Bestelling() {
         this.bestelNummer = UUID.randomUUID();
-        this.totaalPrijs = berekenTotaalPrijs(alleProducten);
-    }
-
-    public double berekenTotaalPrijs(ArrayList<Product> alleProducten) {
-        double totaal = 0.0;
-        for (Product product : alleProducten) {
-            totaal += product.getPrijs();
-        }
-        return totaal;
+        this.totaalPrijs = 0.0;
+        this.alleProducten = new ArrayList<>();
     }
 
     public void voegProductToe(Product product) {
@@ -53,8 +40,8 @@ public class Bestelling {
         return totaalPrijs;
     }
 
-    public void setTotaalPrijs(double totaalPrijs) {
-        this.totaalPrijs = totaalPrijs;
+    public void setTotaalPrijs(ArrayList<Product> alleProducten) {
+        this.totaalPrijs = Tools.berekenTotaalPrijs(alleProducten);
     }
 
     public ArrayList<Product> getAlleProducten() {
