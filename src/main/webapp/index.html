@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>VitShop • Productoverzicht</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" type="image/png" href="pill.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="icon" type="image/png" href="assets/images/pill.ico">
 </head>
 <body>
     <header>
-        <img src="images/VitShop.png" alt="VitShop Logo" class="center" width="20%" height="20%">
+        <img src="assets/images/VitShop.png" alt="VitShop Logo" class="center" width="20%" height="20%">
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">Productoverzicht</a></li>
@@ -16,35 +16,53 @@
                 <li><a href="inloggen.html">Inloggen</a></li>
             </ul>
         </nav>
-        <hr>
     </header>
-    <section>
-        <h2>Product 1</h2>
-        <p>Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br>
-            Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br>
-            Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br></p>
-        <img src="images/vitamineD3.jpeg" alt="Vitamine D3" width="10%" height="10%">
-    </section>
-    <section>
-        <h2>Product 2</h2>
-        <p>Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br>
-            Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br>
-            Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br></p>
-        <img src="images/vitamineD3.jpeg" alt="Vitamine D3" width="10%" height="10%">
-    </section>
-    <section>
-        <h2>Product 3</h2>
-        <p>Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br>
-            Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br>
-            Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br></p>
-        <img src="images/vitamineD3.jpeg" alt="Vitamine D3" width="10%" height="10%">
-    </section>
-    <section>
-        <h2>Product 4</h2>
-        <p>Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br>
-            Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br>
-            Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving Productbeschrijving <br></p>
-        <img src="images/vitamineD3.jpeg" alt="Vitamine D3" width="10%" height="10%">
-    </section>
+
+    <div class="product">
+        <a href="#">
+            <img src="assets/images/vitd.png" alt="Vitamine D" class="productafbeelding">
+            <div class="container">
+                <h2 class="productitel">Vitamine D tabletten</h2>
+                <p class="productbeschrijving">Veel mensen hebben een verhoogde behoefte aan vitamine D, zoals ouderen, kinderen en mensen die weinig
+                    buiten komen, een donkere huid hebben of gesluierd zijn. De Gezondheidsraad adviseert om dan een
+                    supplement te gebruiken. In Engeland gaat men nog een stapje verder. Nu veel mensen thuis blijven
+                    adviseert de ‘Public Health England’ iedereen dagelijks een vitamine D supplement te gebruiken.</p>
+                <p class="prijs">$19.99</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="product">
+        <a href="#">
+            <img src="assets/images/vitb12.png" alt="Vitamine B12" class="productafbeelding">
+            <h2 class="productitel">Vitamine B12 zuigtabletten</h2>
+            <p class="productbeschrijving">Flinndal Vitamine B12 is goed voor het geheugen, concentratievermogen en de gemoedstoestand.
+                Het zuigtablet met 1000 mcg vitamine B12 is goed opneembaar en heeft een natuurlijke pepermuntsmaak.
+                Mét foliumzuur, voor extra energie bij vermoeidheid.</p>
+            <p class="prijs">$19.99</p>
+        </a>
+    </div>
+
+    <div class="product">
+        <a href="#">
+            <img src="assets/images/vitc.png" alt="Vitamine C" class="productafbeelding">
+            <h2 class="productitel">Vitamine C Forte tabletten</h2>
+            <p class="productbeschrijving">Flinndal Vitamine C Forte voor de weerstand! Met maar liefst 500 mg vitamine C (625% van de aanbevolen
+                dagelijkse hoeveelheid). Een krachtige maar verantwoorde dosering, speciaal voor mensen met een verhoogde
+                behoefte aan vitamine C. Zoals bij roken, of een tekort aan vitamine C in de voeding.</p>
+            <p class="prijs">$19.99</p>
+        </a>
+    </div>
+
+    <div class="product">
+        <a href="#">
+            <img src="assets/images/vitfolium.png" alt="Foliumzuur" class="productafbeelding">
+            <h2 class="productitel">Vitamine B11 (Foliumzuur)</h2>
+            <p class="productbeschrijving">Flinndal Foliumzuur is speciaal voor vrouwen met een kinderwens en voor het eerste trimester van de
+                zwangerschap ontwikkeld. Foliumzuur draagt bij aan de vorming van de placenta en tot de weefselgroei
+                tijdens de zwangerschap. Het ondersteunt de groei van je nog ongeboren kindje tijdens de zwangerschap.</p>
+            <p class="prijs">$19.99</p>
+        </a>
+    </div>
 </body>
 </html>

@@ -1,0 +1,23 @@
+.product {
+    width: 1000px;
+    margin: 10px 10px 50px 15px;
+    height: 250px;
+    background-color: #fcfcfc;
+}
+
+.product .productafbeelding {
+    border: 1px solid black;
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin-right: 20px;
+}
+
+.product .prijs {
+    vertical-align: bottom;
+}
+
+.product a {
+    text-decoration: none;
+    color: black;
+}

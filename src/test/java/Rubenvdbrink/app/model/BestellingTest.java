@@ -27,7 +27,7 @@ class BestellingTest {
     @Test
     void berekenTotaalPrijs() {
         Product p1 = new Product("Titel","merk", "beschrijving",30.50);
-        Product p2 = new Product("Tite2l","merk2", "beschrijving2",50);
+        Product p2 = new Product("Titel2","merk2", "beschrijving2",50);
         Bestelling b1 = new Bestelling();
 
         b1.voegProductToe(p1);
