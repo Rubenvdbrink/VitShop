@@ -7,6 +7,12 @@
     margin-right: auto;
 }
 
+.footer {
+    margin-top: 25px;
+    height: 50px;
+    text-align: center;
+}
+
 body {
     font-family: arial;
 }
