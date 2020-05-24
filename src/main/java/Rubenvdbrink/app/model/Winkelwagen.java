@@ -32,7 +32,7 @@ public class Winkelwagen {
     }
 
     public void setTotaalPrijs(ArrayList<Product> alleProducten) {
-        this.totaalPrijs = Tools.berekenTotaalPrijs(alleProducten);
+        this.totaalPrijs = Utils.berekenTotaalPrijs(alleProducten);
     }
 
     public ArrayList<Product> getAlleProducten() {

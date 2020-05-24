@@ -1,13 +1,17 @@
 package Rubenvdbrink.app.model;
 
+import javax.ws.rs.Produces;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.UUID;
 
-public class Product {
+public class Product implements Serializable {
     public UUID productId;
     public String titel;
     public String merk;
     public String beschrijving;
     public double prijs;
+    public static ArrayList<Product> alleProducten = new ArrayList<Product>();
 
     public Product(String titel, String merk, String beschrijving, double prijs) {
         this.productId = UUID.randomUUID();
@@ -55,6 +59,46 @@ public class Product {
 
     public void setPrijs(double prijs) {
         this.prijs = prijs;
+    }
+
+    public static ArrayList<Product> getAlleProducten() {
+        return alleProducten;
+    }
+
+    public static void setAlleProducten(ArrayList<Product> alleProducten) {
+        Product.alleProducten = alleProducten;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Product product = (Product) o;
+
+        if (Double.compare(product.prijs, prijs) != 0) return false;
+        if (titel != null ? !titel.equals(product.titel) : product.titel != null) return false;
+        return merk != null ? merk.equals(product.merk) : product.merk == null;
+    }
+
+    public static boolean addProduct(Product newProduct) {
+        for (Product product : alleProducten) {
+            if (product.equals(newProduct)) {
+                return false;
+            }
+        }
+        alleProducten.add(newProduct);
+        return true;
+    }
+
+    public static boolean deleteProduct(UUID uuid) {
+        for (Product product : alleProducten) {
+            if (product.getProductId().equals(uuid)) {
+                alleProducten.remove(product);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
