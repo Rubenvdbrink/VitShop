@@ -8,9 +8,9 @@ class WinkelwagenTest {
 
     @Test
     void testTotaalPrijs() {
-        Product p1 = new Product("Titel", "Merk", "Beschrijving", 20);
-        Product p2 = new Product("Titel2", "Merk2", "Beschrijving2", 25);
-        Product p3 = new Product("Titel3", "Merk3", "Beschrijving3", 25);
+        Product p1 = new Product("Titel", "Merk", "Beschrijving", 20, "pad");
+        Product p2 = new Product("Titel2", "Merk2", "Beschrijving2", 25, "pad");
+        Product p3 = new Product("Titel3", "Merk3", "Beschrijving3", 25, "pad");
 
         Winkelwagen w1 = new Winkelwagen();
         w1.voegProductToe(p1);

@@ -10,8 +10,8 @@ class BestellingTest {
 
     @Test
     void testVoegProductToe() {
-        Product p1 = new Product("Titel","merk", "beschrijving",30.50);
-        Product p2 = new Product("Tite2l","merk2", "beschrijving2",50);
+        Product p1 = new Product("Titel","merk", "beschrijving",30.50, "pad");
+        Product p2 = new Product("Tite2l","merk2", "beschrijving2",50, "pad");
         Bestelling b1 = new Bestelling();
 
         b1.voegProductToe(p1);
@@ -26,8 +26,8 @@ class BestellingTest {
 
     @Test
     void berekenTotaalPrijs() {
-        Product p1 = new Product("Titel","merk", "beschrijving",30.50);
-        Product p2 = new Product("Titel2","merk2", "beschrijving2",50);
+        Product p1 = new Product("Titel","merk", "beschrijving",30.50, "pad");
+        Product p2 = new Product("Titel2","merk2", "beschrijving2",50, "pad");
         Bestelling b1 = new Bestelling();
 
         b1.voegProductToe(p1);

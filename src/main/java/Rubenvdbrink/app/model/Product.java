@@ -1,6 +1,6 @@
 package Rubenvdbrink.app.model;
 
-import javax.ws.rs.Produces;
+import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -10,15 +10,17 @@ public class Product implements Serializable {
     public String titel;
     public String merk;
     public String beschrijving;
+    public String afbeeldingPad;
     public double prijs;
     public static ArrayList<Product> alleProducten = new ArrayList<Product>();
 
-    public Product(String titel, String merk, String beschrijving, double prijs) {
+    public Product(String titel, String merk, String beschrijving, double prijs, String afbeeldingPad) {
         this.productId = UUID.randomUUID();
         this.titel = titel;
         this.merk = merk;
         this.beschrijving = beschrijving;
         this.prijs = prijs;
+        this.afbeeldingPad = afbeeldingPad;
     }
 
     public UUID getProductId() {
@@ -108,6 +110,7 @@ public class Product implements Serializable {
                 ", titel='" + titel + '\'' +
                 ", merk='" + merk + '\'' +
                 ", beschrijving='" + beschrijving + '\'' +
+                ", afbeeldingPad='" + afbeeldingPad + '\'' +
                 ", prijs=" + prijs +
                 '}';
     }

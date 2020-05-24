@@ -19,6 +19,10 @@
     vertical-align: bottom;
 }
 
+.product .producttitel {
+    font-size: 20px;
+}
+
 .product a {
     text-decoration: none;
     color: black;
