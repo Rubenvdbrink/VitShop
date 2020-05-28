@@ -19,7 +19,6 @@ public class ProductResource {
                                   @FormParam("beschrijving") String beschrijving,
                                   @FormParam("prijs") double prijs,
                                   @FormParam("afbeeldingPad") String afbeeldingPad){
-        System.out.println(beschrijving);
         if (titel == null || merk == null || beschrijving == null || prijs == 0 || afbeeldingPad == null) {
             System.out.println("Product niet aangemaakt, niet alle velden zijn correct ingevuld!");
             return Response.status(Response.Status.CONFLICT).entity(

@@ -1,7 +1,5 @@
 package Rubenvdbrink.app.listeners;
 
-import Rubenvdbrink.app.model.App;
-import Rubenvdbrink.app.model.Product;
 import Rubenvdbrink.app.persistance.PersistanceManager;
 
 import javax.servlet.ServletContextEvent;
