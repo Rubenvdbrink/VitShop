@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class Product implements Serializable {
-    public UUID productId;
-    public String titel;
-    public String merk;
-    public String beschrijving;
-    public String afbeeldingPad;
-    public double prijs;
-    public static ArrayList<Product> alleProducten = new ArrayList<Product>();
+    private UUID productId;
+    private String titel;
+    private String merk;
+    private String beschrijving;
+    private String afbeeldingPad;
+    private double prijs;
+    private static ArrayList<Product> alleProducten = new ArrayList<Product>();
 
     public Product(String titel, String merk, String beschrijving, double prijs, String afbeeldingPad) {
         this.productId = UUID.randomUUID();

@@ -1,8 +1,8 @@
 package Rubenvdbrink.app.model;
 
 public class Gebruiker {
-    private String gebruikersnaam;
-    private String wachtwoord;
+    protected String gebruikersnaam;
+    protected String wachtwoord;
 
     public Gebruiker(String gebruikersnaam, String wachtwoord) {
         this.gebruikersnaam = gebruikersnaam;
