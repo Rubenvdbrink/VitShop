@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-//@WebFilter(urlPatterns = "/*")
+@WebFilter(urlPatterns = "/*")
 //uncomment later
 public class HttpsFilter extends HttpFilter {
     private static final String X_FORWARDED_PROTO = "X-Forwarded-Proto";
