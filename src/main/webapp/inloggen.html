@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VitShop • Inloggen</title>
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/inlogpagina.css">
     <link rel="icon" type="image/png" href="assets/images/pill.ico">
 </head>
 <body>
@@ -12,14 +13,23 @@
         <img src="assets/images/VitShop.png" alt="VitShop Logo" class="center" width="20%" height="20%">
         <nav class="navbar">
             <ul>
-                <li><a href="productoverzicht.html">Productoverzicht</a></li>
-                <li><a href="registreren.html">Registreren</a></li>
-                <li><a href="inloggen.html">Inloggen</a></li>
+                <li><a href="index.html">Terug naar productoverzicht</a></li>
             </ul>
         </nav>
     </header>
+    <div class="inlogdiv">
+        <form class="inlogform" id="inlogform">
+            <h2 class="inlogtitel">Inloggen</h2>
+            <div class="logininput">
+                <input id="inputgebruikersnaam" type="text" name="username" placeholder="Gebruikersnaam">
+                <input id="inputwachtwoord" type="password" name="password" placeholder="Wachtwoord">
+            </div>
+            <input class="loginbutton" id="loginbutton" type="button" value="login">
+        </form>
+    </div>
     <footer class="footer">
         &copy; VitShop
     </footer>
+    <script src="assets/js/inloggen.js"></script>
 </body>
 </html>

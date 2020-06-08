@@ -71,6 +71,14 @@ public class Product implements Serializable {
         Product.alleProducten = alleProducten;
     }
 
+    public String getAfbeeldingPad() {
+        return afbeeldingPad;
+    }
+
+    public void setAfbeeldingPad(String afbeeldingPad) {
+        this.afbeeldingPad = afbeeldingPad;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

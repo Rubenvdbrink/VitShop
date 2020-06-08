@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VitShop • Productoverzicht</title>
+    <title>VitShop • Uw winkelmandje</title>
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/productoverzicht.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/winkelwagen.css">
     <link rel="icon" type="image/png" href="assets/images/pill.ico">
 </head>
 <body>
@@ -14,7 +14,7 @@
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">Productoverzicht</a></li>
-                <li><a href="winkelmandje.html" id="winkelmandjejs">Winkelmandje</a></li>
+                <li><a href="winkelmandje.html">Winkelmandje</a></li>
                 <li><a href="registreren.html">Registreren</a></li>
                 <li><a href="inloggen.html">Inloggen</a></li>
                 <li><a href="" onclick="logout();">Uitloggen</a></li>
@@ -22,12 +22,21 @@
         </nav>
     </header>
 
-    <div id="jsProducten" class="producten">
-    </div>
+        <div class="wagenheader">
+            <img src="assets/images/winkelmandje.png" alt="winkelmandje" width="50px" height="100%">
+            <h2>Uw winkelmandje</h2>
+        </div>
+        <div class="product">
+            <img class="afbeelding" src="assets/images/vitb12.png" width="100px" height="100%">
+            <h3 class="titel">Titel</h3>
+            <p>Prijs</p>
+        </div>
+
     <footer class="footer">
         &copy; VitShop
     </footer>
-    <script src="assets/js/productoverzicht.js"></script>
+
+    <script src="assets/js/winkelmandje.js"></script>
     <script src="assets/js/uitloggen.js"></script>
 </body>
 </html>

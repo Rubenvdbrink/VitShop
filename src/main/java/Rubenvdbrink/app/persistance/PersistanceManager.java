@@ -1,6 +1,7 @@
 package Rubenvdbrink.app.persistance;
 
 import Rubenvdbrink.app.model.App;
+import Rubenvdbrink.app.model.MyUser;
 import Rubenvdbrink.app.model.Product;
 import com.azure.storage.blob.BlobClient;
 import com.azure.storage.blob.BlobContainerClient;
@@ -20,8 +21,12 @@ public class PersistanceManager {
             .buildClient();
 
     public static void saveDataToAzure() throws IOException {
+        if(!blobContainer.exists()) {
+            blobContainer.create();
+        }
 
         App.getApp().setAlleProducten(Product.getAlleProducten());
+        App.getApp().setAlleUsers(MyUser.getAllMyUsers());
 
         BlobClient blob = blobContainer.getBlobClient("datablob");
 
@@ -53,12 +58,11 @@ public class PersistanceManager {
                 ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
                 ObjectInputStream ois = new ObjectInputStream(bais);
 
-                Object obj = ois.readObject();
-                if (obj instanceof App) {
-                    App loadedApp = (App)obj;
-                    App.setApp(loadedApp);
-                    loadedApp.setData(); //Hier wordt alle data van de gehele app opnieuw geset in alle klassen
-                }
+                App loadedApp = (App) ois.readObject();
+                App.setApp(loadedApp);
+
+                loadedApp.loadData(); //Hier wordt alle data van de gehele app opnieuw geset in alle klassen
+
                 baos.close();
                 ois.close();
             }

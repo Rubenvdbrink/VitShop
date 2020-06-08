@@ -1,8 +1,9 @@
 package Rubenvdbrink.app.model;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Klant extends Gebruiker {
+public class Klant extends MyUser{
     private UUID klantId;
     private String emailAdres;
     private Winkelwagen winkelwagen;

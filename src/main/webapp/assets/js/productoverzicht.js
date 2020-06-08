@@ -24,6 +24,7 @@ function toonProducten(data) {
         // let productPagina = product.querySelector("#jsProductPagina");
         // productPagina.setAttribute("href", p.afbee)
         let productAfbeelding = product.querySelector("#jsProductAfbeelding");
+        console.log(p);
         productAfbeelding.setAttribute("src", p.afbeeldingPad);
         let productTitel = product.querySelector("#jsProductTitel");
         productTitel.textContent = p.titel;

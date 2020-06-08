@@ -1,5 +1,6 @@
 package Rubenvdbrink.app.listeners;
 
+import Rubenvdbrink.app.model.Klant;
 import Rubenvdbrink.app.persistance.PersistanceManager;
 
 import javax.servlet.ServletContextEvent;
@@ -19,6 +20,7 @@ public class MyContextListener implements ServletContextListener {
             System.out.println("Kan data niet ophalen!");
             e.printStackTrace();
         }
+        new Klant("VitRuben", "1234", "rubenvandenbrink@hotmail.com");
     }
 
     @Override

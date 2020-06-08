@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VitShop • Registreren</title>
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/registerpagina.css">
     <link rel="icon" type="image/png" href="assets/images/pill.ico">
 </head>
 <body>
@@ -12,12 +13,22 @@
         <img src="assets/images/VitShop.png" alt="VitShop Logo" class="center" width="20%" height="20%">
         <nav class="navbar">
             <ul>
-                <li><a href="productoverzicht.html">Productoverzicht</a></li>
-                <li><a href="registreren.html">Registreren</a></li>
-                <li><a href="inloggen.html">Inloggen</a></li>
+                <li><a href="index.html">Terug naar productoverzicht</a></li>
             </ul>
         </nav>
     </header>
+    <div class="registerdiv">
+        <form class="registerform" id="registerform">
+            <h2 class="registertitel">Registreren</h2>
+            <div class="registerinput">
+                <input id="inputgebruikersnaam" type="text" name="username" placeholder="Gebruikersnaam">
+                <input id="inputwachtwoord" type="password" name="password" placeholder="Wachtwoord">
+                <input id="inputemail" type="email" name="email" placeholder="E-mail">
+            </div>
+            <input class="registerbutton" id="registerbutton" type="button" value="Register">
+        </form>
+    </div>
+    <script src="assets/js/registreren.js"></script>
     <footer class="footer">
         &copy; VitShop
     </footer>
