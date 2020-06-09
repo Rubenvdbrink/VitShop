@@ -22,7 +22,7 @@ function toonProducten(data) {
         let product = sjabloon.content.cloneNode(true).firstElementChild;
 
         // let productPagina = product.querySelector("#jsProductPagina");
-        // productPagina.setAttribute("href", p.afbee)
+        // productPagina.setAttribute("href",)
         let productAfbeelding = product.querySelector("#jsProductAfbeelding");
         console.log(p);
         productAfbeelding.setAttribute("src", p.afbeeldingPad);

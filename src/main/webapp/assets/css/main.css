@@ -19,7 +19,3 @@ body {
     font-family: arial;
     /*font-family: 'Roboto', sans-serif;*/
 }
-
-.producten:last-child {
-    margin-bottom: 100px;
-}

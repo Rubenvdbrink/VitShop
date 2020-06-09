@@ -13,7 +13,7 @@ public class MyUser implements Principal, Serializable {
     public MyUser(String username, String plainpassword) {
         this.username = username;
         this.plainpassword = plainpassword;
-        this.role = "user";
+        this.role = "klant";
         if(!allMyUsers.contains(this)) {
             allMyUsers.add(this);
         }
@@ -70,4 +70,8 @@ public class MyUser implements Principal, Serializable {
 
     public static void setAllMyUsers(ArrayList<MyUser> allMyUsers) { MyUser.allMyUsers = allMyUsers; }
     public static ArrayList<MyUser> getAllMyUsers() { return allMyUsers; }
+
+    public void setAdmin() {
+        this.role = "admin";
+    }
 }

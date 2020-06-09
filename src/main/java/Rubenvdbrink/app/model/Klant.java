@@ -1,6 +1,5 @@
 package Rubenvdbrink.app.model;
 
-import java.io.Serializable;
 import java.util.UUID;
 
 public class Klant extends MyUser{

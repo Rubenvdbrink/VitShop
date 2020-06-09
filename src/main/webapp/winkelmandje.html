@@ -24,19 +24,34 @@
 
         <div class="wagenheader">
             <img src="assets/images/winkelmandje.png" alt="winkelmandje" width="50px" height="100%">
-            <h2>Uw winkelmandje</h2>
+            <h2>Uw winkelmandje (Work In Progress)</h2>
         </div>
-        <div class="product">
-            <img class="afbeelding" src="assets/images/vitb12.png" width="100px" height="100%">
-            <h3 class="titel">Titel</h3>
-            <p>Prijs</p>
-        </div>
+    <div id="jsProducten">
+            <div class="product">
+                <div class="afbeelding">
+                    <img class="afbeelding" src="assets/images/vitb12.png" width="100px" height="100%">
+                </div>
+                <div class="titel">
+                    <h3 class="titel">Titel</h3>
+                </div>
+                <div class="prijs">
+                    <p>Prijs</p>
+                </div>
+                <div class="aantal">
+                    <input type="number" min="1" name="aantal">
+                </div>
+                <div class="verwijder">
+                    <button>Verwijder</button>
+                </div>
+            </div>
+        <hr>
+    </div>
 
     <footer class="footer">
         &copy; VitShop
     </footer>
 
-    <script src="assets/js/winkelmandje.js"></script>
+    <script src="assets/js/winkelwagen.js"></script>
     <script src="assets/js/uitloggen.js"></script>
 </body>
 </html>

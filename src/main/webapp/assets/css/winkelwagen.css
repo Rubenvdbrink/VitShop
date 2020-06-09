@@ -2,12 +2,47 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 25px;
 }
 
 .product {
-    display: flex;
-    background-color: lightgray;
-    flex-direction: column;
+    /*display: flex;*/
+    /*background-color: lightgray;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     align-items: center;
+    width: 700px;
+    margin: auto;
+    padding: 10px;
+}
+
+.afbeelding {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.titel {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.prijs {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+.aantal {
+    grid-area: 1 / 4 / 2 / 6;
+    width: 70px;
+}
+
+.verwijder {
+    grid-area: 2 / 5 / 3 / 6;
+}
+
+hr {
+    width: 750px;
 }
 

@@ -11,6 +11,18 @@ import java.util.UUID;
 @Path("/product")
 public class ProductResource {
 
+    @GET
+    @Path("/getall")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllProducts() {
+        try {
+            return Response.ok(Product.getAlleProducten()).build();
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.CONFLICT).entity(
+                    new AbstractMap.SimpleEntry<>("resultaat", "Productoverzicht niet gevonden!")).build();
+        }
+    }
+
     @POST
     @Path("/create")
     @Produces(MediaType.APPLICATION_JSON)
@@ -33,13 +45,6 @@ public class ProductResource {
         System.out.println("Product: " + titel + " bestaat al!");
         return Response.status(Response.Status.CONFLICT).entity(
                 new AbstractMap.SimpleEntry<>("resultaat", "Product: " + titel + " bestaat al!")).build();
-    }
-
-    @GET
-    @Path("/getall")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllProducts() {
-        return Response.ok(Product.getAlleProducten()).build();
     }
 
     @DELETE

@@ -27,3 +27,7 @@
     text-decoration: none;
     color: black;
 }
+
+.producten:last-child {
+    margin-bottom: 100px;
+}
