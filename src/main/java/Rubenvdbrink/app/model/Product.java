@@ -1,6 +1,5 @@
 package Rubenvdbrink.app.model;
 
-import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -109,6 +108,15 @@ public class Product implements Serializable {
             }
         }
         return false;
+    }
+
+    public static Product getProductByUUID(UUID id) {
+        for (Product product : alleProducten) {
+            if (product.productId.equals(id)) {
+                return product;
+            }
+        }
+        return null;
     }
 
     @Override

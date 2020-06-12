@@ -7,6 +7,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.crypto.MacProvider;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -45,7 +46,7 @@ public class AuthenticationResource {
             String token = createToken(username, role);
 
             AbstractMap.SimpleEntry<String, String> JWT = new AbstractMap.SimpleEntry<>("JWT", token);
-            System.out.println(LocalTime.now() + " " + username + " is ingelogd!");
+            System.out.println(LocalTime.now() + " " + username + " met rol " + role + " is ingelogd!");
             return Response.ok(JWT).build();
         } catch (JwtException | IllegalArgumentException e) {
             return Response.status(Response.Status.UNAUTHORIZED).entity(
@@ -81,5 +82,12 @@ public class AuthenticationResource {
             return Response.status(Response.Status.CONFLICT).entity(
                     new AbstractMap.SimpleEntry<>("resultaat", e.getMessage())).build();
         }
+    }
+
+    @GET
+    @Path("/checklogin")
+    @RolesAllowed({"klant", "admin"})
+    public Response isLoggedIn() {
+        return Response.ok().build();
     }
 }

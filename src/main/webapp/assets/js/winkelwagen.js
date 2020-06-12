@@ -7,7 +7,7 @@ const productSjabloon = `
                 <h3 id="jsTitel" class="titel"></h3>
             </div>
             <div class="prijs">
-                <p id="jsPrice"></p>
+                <p id="jsPrijs"></p>
             </div>
             <div class="aantal">
                 <input id="jsAantal" type="number" min="1" name="aantal">
@@ -15,11 +15,9 @@ const productSjabloon = `
             <div class="verwijder">
                 <button>Verwijder</button>
             </div>
-        </div>
-    <hr>`;
+        </div>`;
 
 const alleProducten = document.querySelector("#jsProducten");
-
 
 function redirectLogIn() {
     if(!window.sessionStorage.getItem("JWT")) {
@@ -30,18 +28,29 @@ function redirectLogIn() {
         fetch("vitshop/klant/winkelwagen", {method: 'GET', headers: { 'Authorization': `Bearer ${window.sessionStorage.getItem("JWT")}` }})
             .then(data => data.json()).then(data => toonWinkelwagen(data));
     }
+
+    // CONSTRUCTION AREA
+    // fetch("/vitshop/authentication/checklogin", {headers: { 'Authorization': `Bearer ${window.sessionStorage.getItem("JWT")}`}})
+    //     .then(response => {
+    //         fetch("vitshop/klant/winkelwagen", {method: 'GET', headers: { 'Authorization': `Bearer ${window.sessionStorage.getItem("JWT")}` }})
+    //             .then(data => data.json()).then(data => toonWinkelwagen(data));
+    //     })
+    //     .catch(window.alert("U moet ingelogd zijn om uw winkelmandje te kunnen zien!"));
+    // CONSTRUCTION AREA
 }
 redirectLogIn();
 
 function toonWinkelwagen(data) {
+    console.log(data);
     data.forEach(p => {
+        if (p === null) {}
         let sjabloon = document.createElement("template");
         sjabloon.innerHTML = productSjabloon;
 
         let product = sjabloon.content.cloneNode(true).firstElementChild;
 
         let productAfbeelding = product.querySelector("#jsAfbeelding");
-        console.log(p);
+
         productAfbeelding.setAttribute("src", p.afbeeldingPad);
         let productTitel = product.querySelector("#jsTitel");
         productTitel.textContent = p.titel;
@@ -49,5 +58,6 @@ function toonWinkelwagen(data) {
         productPrijs.textContent = `€${p.prijs}`;
 
         alleProducten.appendChild(product);
+        alleProducten.appendChild(document.createElement("hr"))
     });
 }

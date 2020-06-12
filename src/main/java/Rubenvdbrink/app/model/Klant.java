@@ -12,6 +12,7 @@ public class Klant extends MyUser{
         super(gebruikersnaam, wachtwoord);
         this.emailAdres = emailAdres;
         this.klantId = UUID.randomUUID();
+        this.winkelwagen = new Winkelwagen();
     }
 
     public UUID getKlantId() {

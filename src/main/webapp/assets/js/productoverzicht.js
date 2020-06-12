@@ -15,16 +15,21 @@ const alleProducten = document.querySelector("#jsProducten");
 fetch("vitshop/product/getall").then(data => data.json()).then(data => toonProducten(data));
 
 function toonProducten(data) {
+    console.log(data);
     data.forEach(p => {
         let sjabloon = document.createElement("template");
         sjabloon.innerHTML = productSjabloon;
 
         let product = sjabloon.content.cloneNode(true).firstElementChild;
 
-        // let productPagina = product.querySelector("#jsProductPagina");
-        // productPagina.setAttribute("href",)
+        //CONSTRUCTION AREA
+        let productPagina = product.querySelector("#jsProductPagina");
+        // productPagina.setAttribute("href", "productpagina.html");
+        productPagina.setAttribute("href", (`productpagina.html?productid=${p.productId}`));
+        //CONSTRUCTION AREA
+
         let productAfbeelding = product.querySelector("#jsProductAfbeelding");
-        console.log(p);
+
         productAfbeelding.setAttribute("src", p.afbeeldingPad);
         let productTitel = product.querySelector("#jsProductTitel");
         productTitel.textContent = p.titel;
@@ -34,6 +39,5 @@ function toonProducten(data) {
         productPrijs.textContent = `€${p.prijs}`;
 
         alleProducten.appendChild(product);
-
     });
 }

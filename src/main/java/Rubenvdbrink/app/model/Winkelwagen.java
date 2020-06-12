@@ -1,9 +1,10 @@
 package Rubenvdbrink.app.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Winkelwagen {
+public class Winkelwagen implements Serializable {
     private UUID wagenId;
     private double totaalPrijs;
     private ArrayList<Product> alleProducten;

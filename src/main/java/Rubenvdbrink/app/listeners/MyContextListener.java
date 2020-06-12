@@ -1,5 +1,6 @@
 package Rubenvdbrink.app.listeners;
 
+import Rubenvdbrink.app.model.Administrator;
 import Rubenvdbrink.app.model.Klant;
 import Rubenvdbrink.app.persistance.PersistanceManager;
 
@@ -20,6 +21,8 @@ public class MyContextListener implements ServletContextListener {
             System.out.println("Kan data niet ophalen!");
             e.printStackTrace();
         }
+
+        new Administrator("AdminRuben", "1234").setAdmin();
         new Klant("VitRuben", "1234", "rubenvandenbrink@hotmail.com");
     }
 

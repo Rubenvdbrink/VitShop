@@ -24,7 +24,7 @@ public class KlantResource {
         try {
             var klant = (Klant) context.getUserPrincipal();
             return Response.ok(klant.getWinkelwagen().getAlleProducten()).build();
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             return Response.status(Response.Status.CONFLICT).entity(
                     new AbstractMap.SimpleEntry<>("resultaat", "Winkelmandje niet gevonden!")).build();
         }
