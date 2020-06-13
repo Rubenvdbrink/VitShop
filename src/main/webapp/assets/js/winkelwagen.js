@@ -18,6 +18,7 @@ const productSjabloon = `
         </div>`;
 
 const alleProducten = document.querySelector("#jsProducten");
+const totaalPrijs_ = document.querySelector("#jsTotaalPrijs");
 
 function redirectLogIn() {
     if(!window.sessionStorage.getItem("JWT")) {
@@ -40,10 +41,16 @@ function redirectLogIn() {
 }
 redirectLogIn();
 
+function round(value, decimals) {
+    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+
 function toonWinkelwagen(data) {
     console.log(data);
+    let totaalPrijs = 0;
     data.forEach(p => {
         if (p === null) {}
+        totaalPrijs = totaalPrijs + p.prijs;
         let sjabloon = document.createElement("template");
         sjabloon.innerHTML = productSjabloon;
 
@@ -60,4 +67,5 @@ function toonWinkelwagen(data) {
         alleProducten.appendChild(product);
         alleProducten.appendChild(document.createElement("hr"))
     });
+    totaalPrijs_.textContent = `Totaal: €${ round(totaalPrijs,2) }`;
 }

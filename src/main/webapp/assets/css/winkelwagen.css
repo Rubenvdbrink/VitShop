@@ -6,15 +6,9 @@
 }
 
 .product {
-    /*display: flex;*/
-    /*background-color: lightgray;*/
-    /*flex-direction: column;*/
-    /*align-items: center;*/
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
     align-items: center;
     width: 700px;
     margin: auto;
@@ -40,6 +34,37 @@
 
 .verwijder {
     grid-area: 2 / 5 / 3 / 6;
+}
+
+.verwijder * {
+    background-color: #EB5C63;
+    color: white;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.bestelDiv {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    width: 700px;
+    margin: auto;
+}
+
+.totaalprijs {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.bestelButton {
+    grid-area: 1 / 5 / 2 / 6;
+
+    background-color: #EB5C63;
+    color: white;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 5px;
 }
 
 hr {
