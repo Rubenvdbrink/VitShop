@@ -22,6 +22,7 @@ public class MyContextListener implements ServletContextListener {
             e.printStackTrace();
         }
 
+        //worden alleen aangemaakt als ze nog niet bestaan(deze check gebeurt in de constructor van MyUser).
         new Administrator("AdminRuben", "1234").setAdmin();
         new Klant("VitRuben", "1234", "rubenvandenbrink@hotmail.com");
     }

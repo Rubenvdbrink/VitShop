@@ -9,16 +9,19 @@ const productSjabloon = `
             <div class="prijs">
                 <p id="jsPrijs"></p>
             </div>
-            <div class="aantal">
-                <input id="jsAantal" type="number" min="1" name="aantal">
-            </div>
+<!--            <div class="aantal">-->
+<!--                <input id="jsAantal" type="number" min="1" name="aantal">-->
+<!--            </div>-->
             <div class="verwijder">
-                <button>Verwijder</button>
+                <button id="jsVerwijderKnop">Verwijder</button>
             </div>
         </div>`;
 
 const alleProducten = document.querySelector("#jsProducten");
 const totaalPrijs_ = document.querySelector("#jsTotaalPrijs");
+const bestelKnop = document.querySelector("#jsBestelButton");
+
+bestelKnop.addEventListener("click", bestellen);
 
 function redirectLogIn() {
     if(!window.sessionStorage.getItem("JWT")) {
@@ -45,6 +48,16 @@ function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 
+function verwijderProduct() {
+    //WIP
+    window.alert("deze functie is in een volgende versie beschikbaar!");
+}
+
+function bestellen() {
+    //WIP
+    window.alert("deze functie is in een volgende versie beschikbaar!");
+}
+
 function toonWinkelwagen(data) {
     console.log(data);
     let totaalPrijs = 0;
@@ -57,12 +70,13 @@ function toonWinkelwagen(data) {
         let product = sjabloon.content.cloneNode(true).firstElementChild;
 
         let productAfbeelding = product.querySelector("#jsAfbeelding");
-
         productAfbeelding.setAttribute("src", p.afbeeldingPad);
         let productTitel = product.querySelector("#jsTitel");
         productTitel.textContent = p.titel;
         let productPrijs = product.querySelector("#jsPrijs");
         productPrijs.textContent = `€${p.prijs}`;
+        let verwijderKnop = product.querySelector("#jsVerwijderKnop");
+        verwijderKnop.addEventListener("click", verwijderProduct);
 
         alleProducten.appendChild(product);
         alleProducten.appendChild(document.createElement("hr"))

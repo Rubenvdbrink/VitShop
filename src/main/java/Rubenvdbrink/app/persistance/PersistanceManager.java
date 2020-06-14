@@ -59,6 +59,7 @@ public class PersistanceManager {
                 ObjectInputStream ois = new ObjectInputStream(bais);
 
                 App loadedApp = (App) ois.readObject();
+
                 App.setApp(loadedApp);
 
                 loadedApp.loadData(); //Hier wordt alle data van de gehele app opnieuw geset in alle klassen
