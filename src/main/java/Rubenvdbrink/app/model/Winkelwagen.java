@@ -20,6 +20,11 @@ public class Winkelwagen implements Serializable {
         this.totaalPrijs += product.getPrijs();
     }
 
+    public Product getProductByUUID(UUID id) {
+        return alleProducten.stream().filter(product ->
+                product.getProductId().equals(id)).findFirst().orElse(null);
+    }
+
     public UUID getWagenId() {
         return wagenId;
     }

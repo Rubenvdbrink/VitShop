@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VitShop • Administrator</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/adminpagina.css">
+    <link rel="icon" type="image/png" href="assets/images/pill.ico">
+</head>
+<body>
+
+<header>
+    <img src="assets/images/VitShop.png" alt="VitShop Logo" class="center" width="20%" height="20%">
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Terug naar productoverzicht</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="admindiv">
+    <form class="producttoevoegenform" id="producttoevoegenform">
+        <h2 class="titel">Product toevoegen</h2>
+        <div class="productinput">
+            <input aria-labelledby="toevoegenbutton" id="inputtitel" type="text" name="titel" placeholder="Titel">
+            <input aria-labelledby="toevoegenbutton" id="inputmerk" type="text" name="merk" placeholder="Merk">
+            <input aria-labelledby="toevoegenbutton" id="inputbeschrijving" type="text" name="beschrijving" placeholder="Beschrijving">
+            <input aria-labelledby="toevoegenbutton" id="inputprijs" type="text" name="prijs" placeholder="Prijs">
+            <input aria-labelledby="toevoegenbutton" id="inputafbeeldingpad" type="text" name="afbeeldingPad" placeholder="Afbeelding Pad">
+        </div>
+        <input class="button" id="toevoegenbutton" type="button" value="Toevoegen">
+    </form>
+</div>
+<div class="admindiv2">
+    <form class="productverwijderenform" id="productverwijderenform">
+        <h2 class="titel">Product verwijderen</h2>
+        <div class="uuidinput">
+            <input aria-labelledby="verwijderenbutton" id="inputuuid" type="text" name="UUID" placeholder="Product ID">
+        </div>
+        <input class="button" id="verwijderenbutton" type="button" value="Verwijderen">
+    </form>
+</div>
+
+<footer class="footer">
+    &copy; VitShop
+</footer>
+<script src="assets/js/adminpagina.js"></script>
+</body>
+</html>

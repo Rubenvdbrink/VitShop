@@ -6,14 +6,12 @@ function login() {
         .then(function(response) {
             if(response.ok) {
                 window.alert("Succesvol ingelogd!");
-                // console.log(response.json());
                 return response.json();
             } else throw "Verkeerde gebruikersnaam/wachtwoord!";
         })
         .then(myJson => {
             console.log(myJson);
             window.sessionStorage.setItem("JWT", myJson.JWT);
-            // window.sessionStorage.setItem("gebruikersnaam", myJson.gebruikersnaam);
             window.location.replace("index.html");
         })
         .catch(console.log && window.alert);

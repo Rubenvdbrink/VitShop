@@ -15,6 +15,11 @@ public class Klant extends MyUser{
         this.winkelwagen = new Winkelwagen();
     }
 
+    public Klant(String gebruikersnaam, String wachtwoord) {
+        super(gebruikersnaam, wachtwoord);
+        this.winkelwagen = new Winkelwagen();
+    }
+
     public UUID getKlantId() {
         return klantId;
     }
@@ -33,6 +38,14 @@ public class Klant extends MyUser{
 
     public Winkelwagen getWinkelwagen() {
         return winkelwagen;
+    }
+
+    public boolean clearWinkelwagen() {
+        this.winkelwagen.getAlleProducten().clear();
+        if(this.winkelwagen.getAlleProducten().isEmpty()) {
+            return true;
+        }
+        return false;
     }
 
     public void setWinkelwagen(Winkelwagen winkelwagen) {

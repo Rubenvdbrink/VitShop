@@ -2,7 +2,7 @@ package Rubenvdbrink.app.model;
 
 import java.util.UUID;
 
-public class Administrator extends MyUser {
+public class Administrator extends Klant {
     private UUID adminId;
 
     public Administrator(String gebruikersnaam, String wachtwoord) {

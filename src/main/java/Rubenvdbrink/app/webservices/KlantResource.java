@@ -17,7 +17,7 @@ public class KlantResource {
 
     @GET
     @Path("/winkelwagen")
-    @RolesAllowed("klant")
+    @RolesAllowed({"klant","admin"})
     @Produces(MediaType.APPLICATION_JSON)
     public Response toonWinkelwagen(@Context SecurityContext context) {
 

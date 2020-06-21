@@ -90,4 +90,9 @@ public class AuthenticationResource {
     public Response isLoggedIn() {
         return Response.ok().build();
     }
+
+    @GET
+    @Path("/checkadmin")
+    @RolesAllowed("admin")
+    public Response isAdmin() { return Response.ok().build(); }
 }

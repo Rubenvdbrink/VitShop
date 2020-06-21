@@ -26,7 +26,6 @@ const jsProductId = getProductId();
 const productDiv = document.querySelector("#jsProduct");
 
 fetch("vitshop/productpagina/" + `${jsProductId}`).then(data => data.json()).then(data => toonProduct(data));
-// params: {productId:`${jsProductId}`},
 function addProduct() {
     fetch("vitshop/winkelwagen/producttoevoegen/"+ `${jsProductId}`, {method: 'POST',
         headers: { 'Authorization': `Bearer ${window.sessionStorage.getItem("JWT")}` }})

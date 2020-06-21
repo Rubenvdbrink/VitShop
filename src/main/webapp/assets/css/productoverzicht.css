@@ -1,6 +1,7 @@
 .product {
     width: 1000px;
     margin: 50px 0px 0px 15px;
+    padding-right: 20px;
     height: 250px;
     box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.75);
     border-radius: 5px;
@@ -30,4 +31,8 @@
 
 .producten:last-child {
     margin-bottom: 100px;
+}
+
+#adminpagetext {
+    font-size: x-small;
 }

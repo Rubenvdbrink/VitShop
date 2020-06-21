@@ -2,6 +2,7 @@ package Rubenvdbrink.app.webservices;
 
 import Rubenvdbrink.app.model.Product;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -24,6 +25,7 @@ public class ProductResource {
     }
 
     @POST
+    @RolesAllowed("admin")
     @Path("/create")
     @Produces(MediaType.APPLICATION_JSON)
     public Response createProduct(@FormParam("titel") String titel,
@@ -32,7 +34,6 @@ public class ProductResource {
                                   @FormParam("prijs") double prijs,
                                   @FormParam("afbeeldingPad") String afbeeldingPad){
         if (titel == null || merk == null || beschrijving == null || prijs == 0 || afbeeldingPad == null) {
-            System.out.println("Product niet aangemaakt, niet alle velden zijn correct ingevuld!");
             return Response.status(Response.Status.CONFLICT).entity(
                     new AbstractMap.SimpleEntry<>("resultaat", "Niet alle velden zijn correct ingevuld!")).build();
         }
@@ -42,21 +43,21 @@ public class ProductResource {
             System.out.println("Product: " + titel + " is aangemaakt!");
             return Response.ok(new AbstractMap.SimpleEntry<>("resultaat", "Product: " + titel + " is aangemaakt!")).build();
         }
-        System.out.println("Product: " + titel + " bestaat al!");
         return Response.status(Response.Status.CONFLICT).entity(
                 new AbstractMap.SimpleEntry<>("resultaat", "Product: " + titel + " bestaat al!")).build();
     }
 
     @DELETE
+    @RolesAllowed("admin")
     @Path("/remove")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteProduct(@FormParam("UUID") UUID uuid) {
         if (uuid == null) {
-            System.out.println("product niet verwijderd!");
             return Response.status(Response.Status.CONFLICT).entity(
                     new AbstractMap.SimpleEntry<>("resultaat", "velden niet correct ingevuld!")).build();
         }
         if (Product.deleteProduct(uuid)) {
+            System.out.println("Product met id: " + uuid + " Is verwijderd!");
             return Response.ok(new AbstractMap.SimpleEntry<>("resultaat", "Product is verwijderd!")).build();
         }
         return Response.status(Response.Status.CONFLICT).entity(
